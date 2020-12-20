@@ -1,0 +1,23 @@
+{% extends "PeluqueriaApp/base.htm" %} {% load static %} {% block content %}
+<h1 style="color:goldenrod"> {{servicio.titulo}} </h1>
+{% for trabajo in trabajos %}
+<section class="page-section clearfix">
+    <div class="container">
+        <div class="intro">
+            {%if trabajo.imagenAntes.url != "" %}
+            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{trabajo.imagenAntes.url}}" alt="" style="width:25%;">{%endif%} {%if trabajo.imagenDespues.url != "" %}
+            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{trabajo.imagenDespues.url}}" alt="" style="width:25%;"> {%endif%}
+            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                <h2 class="section-heading mb-4">
+                    <span class="section-heading-upper">Descripci&oacute;n</span>
+                </h2>
+                <p class="mb-3">{{trabajo.descripcion}}
+                </p>
+                <div style="text-align: left; font-size: 0.8em;">
+                    Profesional: {{trabajo.Profesional.usuario.first_name}} {{trabajo.Profesional.usuario.last_name}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{%endfor %} {% endblock%}

@@ -1,0 +1,28 @@
+{% extends "PeluqueriaApp/base.htm" %} {% load static %} {% block content %} {% for profesional in profesionales %}
+<section class="page-section clearfix">
+    <div class="container">
+        <div class="intro">
+            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{profesional.imagen.url}}" alt="" style="width:50%;">
+            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                <h2 class="section-heading mb-4">
+                    <span class="section-heading-lower" style="color: goldenrod;">{{profesional.usuario.first_name}}</span>
+                    <span class="section-heading-upper">Biografía</span>
+                </h2>
+                <p class="mb-3">{{profesional.Biografia}}</p>
+                <h2 class="section-heading mb-4">
+                    <span class="section-heading-upper">Formación</span>
+                </h2>
+                <p class="mb-3">{{profesional.Formacion}}</p>
+                <h2 class="section-heading mb-4">
+                    <span class="section-heading-upper">Servicios</span>
+                </h2>
+                <p class="mb-3">
+                    {%for servicios in profesional.servicios.all %}
+                    <a href="" class="linksTrabajos">{{servicios.titulo}}</a> &nbsp;&nbsp;&nbsp; {% endfor%}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endfor %} {% endblock %}
