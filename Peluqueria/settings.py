@@ -31,7 +31,7 @@ SECRET_KEY = 'j18c7-3jtmk=80v6+8&!k0w-_t0zil3-9(8osmg9-za@7x=tzx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gustavo1.pythonanywhere.com',]
 
 
 # Application definition
@@ -99,11 +99,11 @@ WSGI_APPLICATION = 'Peluqueria.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'peluqueria',
-	    'USER': 'root',
-	    'PASSWORD': '',
-	    'HOST': 'localhost',
-	    'DATABASE_PORT': '3306',
+        'NAME': 'Gustavo1$Peluqueria',
+	    'USER': 'Gustavo1',
+	    'PASSWORD': 'gchMySQL123',
+	    'HOST': 'Gustavo1.mysql.pythonanywhere-services.com',
+	    'DATABASE_PORT': '',
     }
 }
 
@@ -142,8 +142,8 @@ USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-
-STATIC_URL = '/static/'
+STATIC_ROOT  =  "/home/Gustavo1/Peluqueria/PeluqueriaApp/static/"
+STATIC_URL = '/assets/'
 TEMPLATE_PATH = os.path.join(BASE_DIR, "templates")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),

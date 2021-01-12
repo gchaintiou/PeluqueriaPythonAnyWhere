@@ -1,4 +1,5 @@
-{% extends "PeluqueriaApp/base.htm" %} {% load static %} {% block content %} {% for servicio in servicios %}
+{% extends "PeluqueriaApp/base.htm" %} {% load static %} {% block content %}
+{% for servicio in servicios %}
 <section class="page-section clearfix">
     <div class="container">
         <div class="intro">
@@ -16,4 +17,5 @@
     </div>
 </section>
 
-{% endfor %} {% endblock %}
+{% endfor %}
+{% endblock %}

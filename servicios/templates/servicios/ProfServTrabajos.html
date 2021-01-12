@@ -1,0 +1,30 @@
+{% extends "PeluqueriaApp/base.htm" %} {% load static %} {% block content %}
+<h1 style="color:goldenrod"> {{servicio.titulo}} </h1>
+<h3><a href="{% url 'Profesionales' %}" class="linksTrabajos">Profesional: {{profesional.usuario.first_name}}&nbsp;{{profesional.usuario.last_name}}</a></h3>
+{% for trabajo in trabajos %}
+<section class="page-section clearfix">
+    <div class="container">
+        <div class="intro">
+            {%if trabajo.imagenAntes.url != "" %}
+            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{trabajo.imagenAntes.url}}" alt="" style="width:25%;">{%endif%} {%if trabajo.imagenDespues.url != "" %}
+            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{trabajo.imagenDespues.url}}" alt="" style="width:25%;"> {%endif%}
+            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                <h2 class="section-heading mb-4">
+                    <span class="section-heading-upper">{{trabajo.titulo}}</span>
+                </h2>
+                <p class="mb-3">{{trabajo.descripcion}}</p>
+                {% if trabajo.demora != null %}
+                <p class="mb-3">demora: {{trabajo.demora}}</p>
+                {% endif %}
+                {% if trabajo.precio != null %}
+                <p class="mb-3">{% if trabajo.preciofijo %}precio: {%else%}precio estimativo: {%endif%} ${{trabajo.precio}}</p>
+                    {% if not trabajo.preciofijo %}
+                        <p class="mb-3">El precio podrá variar de acuerdo al tipo de cabello</p>
+                    {%endif%}
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</section>
+{%endfor %} {% endblock%}

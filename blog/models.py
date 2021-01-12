@@ -9,7 +9,7 @@ class Categoria(models.Model):
         verbose_name = "categoria"
         verbose_name_plural = "categorias"
     def __str__(self):
-        return self.nombre
+        return self.categoria
 
 class Post(models.Model):
     titulo = models.CharField(max_length = 50)
@@ -23,4 +23,4 @@ class Post(models.Model):
         verbose_name = "post"
         verbose_name_plural = "posts"
     def __str__(self):
-        return self.titulo        
+        return self.titulo
